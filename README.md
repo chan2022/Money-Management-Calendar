@@ -23,4 +23,4 @@
 <br>
 
 
-🚧 Status <br> This project is currently a work in progress! I'm actively building features, improving the UI, and refining how data is stored and displayed.
+🚧 **Status** <br> This project is currently a work in progress! I'm actively building features, improving the UI, and refining how data is stored and displayed.
