@@ -1,9 +1,9 @@
 # 💰 Money-Management-Calendar
 
-**Money Management Calendar** is a personal finance tracking app designed for visual thinkers who want to stay on top of their daily expenses using a calendar-based view. Whether you're managing a household budget or keeping track of multiple accounts across countries, this tool helps you understand where your money goes—day by day.
+**Money Management Calendar** is a personal finance tracking app designed for visual thinkers who want to stay on top of their daily expenses using a calendar-based view. Whether you're managing a household budget or keeping track of multiple accounts across countries, this tool helps you understand where your money goes, day by day.
 
 
-🧠 **Why I Built This** <br> As an international resident managing both American and Korean bank accounts, I needed a simple and clear way to see my daily spending across multiple currencies and cards. Most apps were too rigid or overwhelming—so I started building my own solution.
+🧠 **Why I Built This** <br> As an international resident managing both American and Korean bank accounts, I needed a simple and clear way to see my daily spending across multiple currencies and cards. Most apps were too rigid or overwhelming. So I started building my own solution.
 
 
 
