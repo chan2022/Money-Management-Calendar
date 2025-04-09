@@ -17,9 +17,8 @@
 
   - Lightweight and simple, focused on visual clarity and usability <br>
 
-EXMPLE:
-
-![image](https://github.com/user-attachments/assets/75ca30cd-e728-4872-803d-4637d3f85da7) 
+<br> EXMPLE: <br>
+<img src="https://github.com/user-attachments/assets/75ca30cd-e728-4872-803d-4637d3f85da7" width="500"/>
 
 <br>
 
