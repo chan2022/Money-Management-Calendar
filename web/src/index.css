@@ -1,4 +1,11 @@
+@font-face {
+    font-family: "MyFont";
+    src: url("/fonts/MyFont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
+    margin: 0;
+    font-family: "MyFont", sans-serif;
 }
