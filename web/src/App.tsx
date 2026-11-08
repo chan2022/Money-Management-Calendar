@@ -1,8 +1,12 @@
+import Login from "./pages/Login"
+import "./App.css"
+
 function App() {
   return (
     <div>
-      <h1>Money Management Calendar</h1>
-      <p>Starting the app...</p>
+      <h1 className="app-title">Money Management</h1>
+
+      <Login />
     </div>
   )
 }
