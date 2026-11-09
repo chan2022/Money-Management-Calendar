@@ -5,6 +5,48 @@
     font-style: normal;
 }
 
+.card {
+  position: relative;   
+  width: 100%;
+  max-width: 380px;
+  min-height: 340px;
+  background-color: white;
+  border-radius: 80px;
+  corner-shape: squircle;
+  padding: 100px;
+  box-shadow: 8px 8px rgba(128, 128, 128, 0.5);
+  border: 2px solid rgba(0, 0, 0, 1.0);
+  overflow: hidden;   
+}
+
+/* Top-left corner line */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 70px;
+  height: 70px;
+  border-top: 10px solid black;
+  border-left: 10px solid black;
+  border-radius: 50px 0 0 0;
+  pointer-events: none;
+}
+
+/* Bottom-right corner line */
+.card::after {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 70px;
+  height: 70px;
+  border-bottom: 10px solid black;
+  border-right: 10px solid black;
+  border-radius: 0 0 50px 0; 
+  pointer-events: none;
+}
+
 body {
     margin: 0;
     font-family: "MyFont", sans-serif;
