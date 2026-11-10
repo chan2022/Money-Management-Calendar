@@ -8,24 +8,26 @@
 
 /* Login card */
 .login-card {
+    position: relative;   
+    width: 100%;
+    max-width: 380px;
+    min-height: 420px;
     background-color: white;
-    width: 350px;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    border-radius: 80px;
+    corner-shape: squircle;
+    padding: 100px 80px 20px;
+    box-shadow: 8px 8px 10px 0px #507593;
+    border: 2px solid #507593;
+    overflow: hidden;   
+    display: flex;
+    flex-direction: column;
 }
 
 /* Title */
 .login-card h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-/* Description */
-.login-card p {
-    color: #777;
-    margin-bottom: 25px;
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 /* Input groups */
@@ -34,44 +36,43 @@
     margin-bottom: 20px;
 }
 
-.input-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-}
-
 .input-group input {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid black;
     box-sizing: border-box;
+    font-family: "MyFont", sans-serif;
+    font-size: 16px;
 }
 
 /* Login button */
 .login-card button {
-    width: 100%;
+    width: 60%;
     padding: 12px;
-    background-color: #426B50;
+    background-color: #022E4A;
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 60px;
     cursor: pointer;
     font-size: 16px;
 }
 
 .login-card button:hover {
-    background-color: #315D45;
+    background-color: #507593;
 }
 
 /* Sign up */
 .signup-text {
-    margin-top: 25px;
-    font-size: 14px;
+    margin-top: auto !important;
+    padding-top: 30px;
+    font-size: 16px;
+    text-align: center;
 }
 
 .signup-text a {
-    color: #426B50;
+    color: #022E4A;
     text-decoration: none;
     font-weight: bold;
 }
