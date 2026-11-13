@@ -1,105 +1,134 @@
 /* Background and positioning */
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
 }
 
 /* Login card */
 .login-card {
-    position: relative;   
-    width: 100%;
-    max-width: 380px;
-    min-height: 420px;
-    /* background-color: white;
-    border-radius: 80px; */
-    corner-shape: squircle;
-    padding: 100px 80px 20px;
-    /* box-shadow: 8px 8px 10px 0px #507593; */
-    border: 2px solid #507593;
-    overflow: hidden;   
-    display: flex;
-    flex-direction: column;
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  min-height: 420px;
+  border-radius: 80px;
+  corner-shape: squircle;
+  padding: 100px 80px 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 
-    background-color: #ffffff;           /* keep white for clarity */
-    border: 2px solid #0f3b59;           /* strong navy border */
-    box-shadow: 8px 8px 16px rgba(15, 59, 89, 0.25);  /* soft navy shadow */
+  background-color: #ffffff;
+  border: 2px solid #0f3b59;
+  box-shadow: 8px 8px 16px rgba(15, 59, 89, 0.25);
 }
 
 /* Title */
 .login-card h2 {
-    font-size: 30px;
-    margin-bottom: 30px;
-    text-align: center;
-    color: #0f3b59;
+  font-size: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #0f3b59;
 }
 
 /* Input groups */
 .input-group {
-    text-align: left;
-    margin-bottom: 20px;
+  text-align: left;
+  margin-bottom: 20px;
 }
 
 .input-group input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: none;
-    /* border-bottom: 1px solid black; */
-    box-sizing: border-box;
-    font-family: "MyFont", sans-serif;
-    font-size: 16px;
-
-    border-bottom: 1.5px solid #7d929e;  /* muted line */
-    color: #3e251e;      
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 1.5px solid #7d929e;   /* same muted underline for both */
+  box-sizing: border-box;
+  font-family: "MyFont", sans-serif;
+  font-size: 16px;
+  color: #3e251e;
+  background: transparent;
 }
 
 .input-group input:focus {
-    border-bottom-color: #dba12c;        /* gold accent on focus */
-    outline: none;
+  border-bottom-color: #dba12c;
+  outline: none;
 }
 
 .input-group input::placeholder {
-    color: #7d929e;
+  color: #7d929e;
+}
+
+/* Password row with Forgot Password on the right */
+.password-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.password-group input {
+  width: 100%;
+  padding: 12px;
+  padding-right: 130px;   /* space for the link */
+  margin: 10px 0;
+  border: none;
+  border-bottom: 1.5px solid #7d929e;
+  box-sizing: border-box;
+  font-family: "MyFont", sans-serif;
+  font-size: 16px;
+  color: #3e251e;
+  background: transparent;
+}
+
+.forgot-password {
+  position: absolute;
+  right: 0;
+  bottom: 22px;           /* adjusted to match input text baseline */
+  font-size: 14px;
+  color: #192853;
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.forgot-password:hover {
+  color: #dba12c;
+  text-decoration: none;
 }
 
 /* Login button */
 .login-card button {
-    width: 60%;
-    padding: 12px;
-    /* background-color: #022E4A; */
-    /* color: white; */
-    border: none;
-    border-radius: 60px;
-    cursor: pointer;
-    font-size: 16px;
-
-    background-color: #0f3b59;
-    color: #ffffff;
+  width: 60%;
+  padding: 12px;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "MyFont", sans-serif;
+  background-color: #0f3b59;
+  color: #ffffff;
 }
 
 .login-card button:hover {
-    /* background-color: #507593; */
-    background-color: #3e251e;
+  background-color: #3e251e;
 }
 
 /* Sign up */
 .signup-text {
-    margin-top: auto !important;
-    padding-top: 30px;
-    font-size: 16px;
-    text-align: center;
-    color: #3e251e;
+  margin-top: auto !important;
+  padding-top: 30px;
+  font-size: 16px;
+  text-align: center;
+  color: #3e251e;
 }
 
 .signup-text a {
-    /* color: #022E4A; */
-    color: #dba12c;
-    text-decoration: none;
-    font-weight: bold;
+  color: #dba12c;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .signup-text a:hover {
-    color: #0f3b59;
+  color: #3e251e;
 }
