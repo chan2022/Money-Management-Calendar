@@ -1,44 +1,49 @@
 import "./Login.css"
 
-function Login({ onGoToSignup }) {
-  return (
-    <div className="profile-container">
-        <div className="profile-card">
-            <h2 style={{ textAlign: "center" }}>LOGIN</h2>
+function Login({ onGoToSignup, onLogin }) {
 
-            <form>
-                <div className="input-group">
-                    <input
-                        type="text"
-                        placeholder="Email"
-                    />
-                </div>
+    const handleLogin = (e) => {
+        e.preventDefault() 
+        onLogin()    
+    }
+    return (
+        <div className="profile-container">
+            <div className="profile-card">
+                <h2 style={{ textAlign: "center" }}>LOGIN</h2>
 
-                <div className="input-group password-group">
-                    <input
-                        type="text"
-                        placeholder="Password"
-                    />
-                    <a href="#" className="forgot-password">
-                        Forgot Password ?
+                <form onSubmit={handleLogin}>
+                    <div className="input-group">
+                        <input
+                            type="text"
+                            placeholder="Email"
+                        />
+                    </div>
+
+                    <div className="input-group password-group">
+                        <input
+                            type="text"
+                            placeholder="Password"
+                        />
+                        <a href="#" className="forgot-password">
+                            Forgot Password ?
+                        </a>
+                    </div>
+
+                    <button type="submit">Login</button>
+                </form>
+
+                <p className="signup-text">
+                    Don’t have an account?{" "}
+                    <a href="#" onClick={(e) => {
+                        e.preventDefault()
+                        onGoToSignup()
+                    }}>
+                        Account Setup
                     </a>
-                </div>
-
-                <button type="submit">Login</button>
-            </form>
-
-            <p className="signup-text">
-                Don’t have an account?{" "}
-                <a href="#" onClick={(e) => {
-                    e.preventDefault()
-                    onGoToSignup()
-                }}>
-                    Account Setup
-                </a>
-            </p>
+                </p>
+            </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default Login
