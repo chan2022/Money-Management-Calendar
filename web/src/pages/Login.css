@@ -1,4 +1,3 @@
-/* Password row with Forgot Password on the right */
 .password-group {
   position: relative;
   margin-bottom: 20px;
@@ -7,7 +6,7 @@
 .password-group input {
   width: 100%;
   padding: 12px;
-  padding-right: 130px;   /* space for the link */
+  padding-right: 130px;
   margin: 10px 0;
   border: none;
   border-bottom: 1.5px solid #7d929e;
@@ -35,7 +34,6 @@
   text-decoration: none;
 }
 
-/* Sign up */
 .signup-text {
   margin-top: auto !important;
   padding-top: 30px;

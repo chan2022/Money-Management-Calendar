@@ -5,6 +5,7 @@
     font-style: normal;
 }
 
+/* Card */
 .profile-container {
   display: flex;
   justify-content: center;
@@ -36,7 +37,7 @@
   color: #0f3b59;
 }
 
-/* Login button */
+/* Button */
 .profile-card button {
   width: 60%;
   padding: 12px;
@@ -114,48 +115,6 @@
 .checkbox-group a:hover {
   color: #0f3b59;
 }
-
-/* .card {
-  position: relative;   
-  width: 100%;
-  max-width: 380px;
-  min-height: 340px;
-  background-color: white;
-  border-radius: 80px;
-  corner-shape: squircle;
-  padding: 100px;
-  box-shadow: 8px 8px 10px 0px #507593;
-  border: 2px solid #507593;
-  overflow: hidden;   
-} */
-
-/* Top-left corner line */
-/* .card::before {
-  content: "";
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 70px;
-  height: 70px;
-  border-top: 10px solid #022E4A;
-  border-left: 10px solid #022E4A;
-  border-radius: 50px 0 0 0;
-  pointer-events: none;
-} */
-
-/* Bottom-right corner line */
-/* .card::after {
-  content: "";
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 70px;
-  height: 70px;
-  border-bottom: 10px solid #022E4A;
-  border-right: 10px solid #022E4A;
-  border-radius: 0 0 50px 0; 
-  pointer-events: none;
-} */
 
 body {
     margin: 0;
