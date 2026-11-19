@@ -1,4 +1,5 @@
 import "./Dashboard.css"
+import Calendar from "./Calendar"
 
 function Dashboard() {
   return (
@@ -9,6 +10,7 @@ function Dashboard() {
         </div>
 
         <div className="notebook-page">
+          <Calendar />
         </div>
       </div>
     </div>
