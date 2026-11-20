@@ -1,18 +1,13 @@
-import "./Calendar.css"   // you can create this later
+import "./Calendar.css"
 
 function Calendar() {
   return (
     <div className="calendar">
-      <h2 className="calendar-title">Calendar</h2>
-
       <div className="calendar-header">
-        <button type="button">←</button>
-        <span>November 2026</span>
-        <button type="button">→</button>
+        <span>2026.11</span>
       </div>
 
       <div className="calendar-grid">
-        {/* Days of the week */}
         <div className="day-name">Sun</div>
         <div className="day-name">Mon</div>
         <div className="day-name">Tue</div>
@@ -21,7 +16,6 @@ function Calendar() {
         <div className="day-name">Fri</div>
         <div className="day-name">Sat</div>
 
-        {/* Simple placeholder days – we will make this dynamic later */}
         {Array.from({ length: 30 }, (_, i) => (
           <div key={i} className="day">
             {i + 1}

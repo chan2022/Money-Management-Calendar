@@ -2,51 +2,50 @@
   width: 100%;
 }
 
-.calendar-title {
-  margin: 0 0 20px 0;
-  color: #0f3b59;
-}
-
 .calendar-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: left;
   margin-bottom: 16px;
-  font-weight: bold;
-  color: #0f3b59;
-}
-
-.calendar-header button {
-  background: none;
-  border: 1px solid #0f3b59;
-  border-radius: 8px;
-  padding: 4px 10px;
-  cursor: pointer;
+  font-size: 40px;
   color: #0f3b59;
 }
 
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 6px;
 }
 
 .day-name {
   text-align: center;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
   color: #0f3b59;
-  padding: 6px 0;
+  padding: 8px 0;
+  border-bottom: 1px solid #7d929e;
 }
 
 .day {
+  position: relative;
   aspect-ratio: 1;
-  border: 1px solid #7d929e;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 14px;
   color: #3e251e;
-  background: #fafafa;
+  background-color: #ffffff;
+  padding: 8px 0 0 10px;
+  box-sizing: border-box;
+  border-right: 1px solid #7d929e;
+  border-bottom: 1px solid #7d929e;
+
+  &:nth-child(7n + 1) {
+    border-left: 1px solid #7d929e;
+  }
+
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(100% / 7 - 1px),
+    #c5c5c5 calc(100% / 7 - 1px),
+    #c5c5c5 calc(100% / 7)
+  );
+  background-size: 100% 100%;
 }
