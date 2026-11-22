@@ -49,3 +49,27 @@
   );
   background-size: 100% 100%;
 }
+
+.calendar-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 16px;
+  flex: 1;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #3e251e;
+  white-space: nowrap;
+}
+
+.filter-circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
