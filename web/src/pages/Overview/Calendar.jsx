@@ -1,6 +1,6 @@
 import "./Calendar.css";
 import { DEFAULT_CATEGORIES } from "../constants/categories";
-import { CURRENCIES } from "../constants/currencies";
+import ExpenseEntry from "../components/ExpenseEntry";
 
 function Calendar() {
   return (
@@ -35,48 +35,18 @@ function Calendar() {
             <div className="day-number">{i + 1}</div>
 
             <div className="expense-entries">
-              {[0, 1].map((entry) => (
-                <div className="expense-entry" key={entry}>
-                  {/* Category dropdown */}
-                  <div className="category-selector">
-                    <span
-                      className="filter-circle"
-                      style={{
-                        backgroundColor: DEFAULT_CATEGORIES[0].color
-                      }}
-                    />
-
-                    <select defaultValue="">
-                      <option value="" disabled>
-                        Category
-                      </option>
-
-                      {DEFAULT_CATEGORIES.map((category) => (
-                        <option key={category.id} value={category.id}>
-                          {category.name}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
-                  {/* Currency and amount */}
-                  <div className="expense-value">
-                    <select defaultValue="EUR">
-                      {CURRENCIES.map((currency) => (
-                        <option key={currency.code} value={currency.code}>
-                          {currency.symbol}
-                        </option>
-                      ))}
-                    </select>
-
-                    <input
-                      type="number"
-                      min="0"
-                      step="0.01"
-                      placeholder="0.00"
-                    />
-                  </div>
-                </div>
+              {[0, 1, 2, 3, 4, 5].map((entryIndex) => (
+                <ExpenseEntry
+                  key={entryIndex}
+                  expense={{
+                    categoryId: "other",
+                    currency: "EUR",
+                    amount: "",
+                  }}
+                  onChange={(field, value) => {
+                    console.log(i + 1, entryIndex, field, value);
+                  }}
+                />
               ))}
             </div>
           </div>

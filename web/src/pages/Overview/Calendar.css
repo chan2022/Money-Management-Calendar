@@ -55,15 +55,19 @@
   font-size: 14px;
   color: #3e251e;
   background-color: #ffffff;
-  padding: 8px 0 0 10px;
+  padding: 0;
   box-sizing: border-box;
   border-right: 1px solid #7d929e;
   border-bottom: 1px solid #7d929e;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 
   &:nth-child(7n + 1) {
     border-left: 1px solid #7d929e;
   }
 
+  /* 7 equal notebook lines */
   background-image: repeating-linear-gradient(
     to bottom,
     transparent 0,
@@ -74,15 +78,31 @@
   background-size: 100% 100%;
 }
 
+/* Day number sits in the first line */
 .day-number {
-  margin-bottom: 8px;
-  font-size: 14px;
+  height: calc(100% / 7);
+  display: flex;
+  align-items: center;
+  padding-left: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  flex-shrink: 0;
 }
 
+/* Expense rows fill the remaining 6 lines */
 .expense-entries {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  min-height: 0;
+}
+
+.expense-entries > * {
+  flex: 1;                 /* each entry = exactly one line */
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 4px 0 6px;
 }
 
 .expense-entry {

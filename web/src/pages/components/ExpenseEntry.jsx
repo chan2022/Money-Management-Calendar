@@ -1,38 +1,60 @@
-
+import { useState, useRef, useEffect } from "react";
 import "./ExpenseEntry.css";
 import { DEFAULT_CATEGORIES } from "../constants/categories";
 import { CURRENCIES } from "../constants/currencies";
 
 function ExpenseEntry({ expense, onChange }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
   const selectedCategory = DEFAULT_CATEGORIES.find(
     (category) => category.id === expense.categoryId
   );
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
     <div className="expense-entry">
-
-      {/* Category selection */}
-      <div className="category-selector">
-        <span
-          className="filter-circle"
+      {/* Category – circle is the dropdown */}
+      <div className="category-selector" ref={dropdownRef}>
+        <button
+          type="button"
+          className="filter-circle-btn"
           style={{
-            backgroundColor: selectedCategory?.color ?? "#E5E5E5"
+            backgroundColor: selectedCategory?.color ?? "#E5E5E5",
           }}
+          onClick={() => setIsOpen((prev) => !prev)}
         />
 
-        <select
-          value={expense.categoryId}
-          onChange={(e) => onChange("categoryId", e.target.value)}
-        >
-          {DEFAULT_CATEGORIES.map((category) => (
-            <option key={category.id} value={category.id}>
-              {category.name}
-            </option>
-          ))}
-        </select>
+        {isOpen && (
+          <div className="color-dropdown">
+            {DEFAULT_CATEGORIES.map((category) => (
+              <button
+                key={category.id}
+                type="button"
+                className="color-option"
+                title={category.name}
+                style={{ backgroundColor: category.color }}
+                onClick={() => {
+                  onChange("categoryId", category.id);
+                  setIsOpen(false);
+                }}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
-      {/* Currency and expense amount */}
+      {/* Currency + Amount (one line, no borders) */}
       <div className="expense-value">
         <select
           value={expense.currency}
@@ -59,7 +81,6 @@ function ExpenseEntry({ expense, onChange }) {
           }
         />
       </div>
-
     </div>
   );
 }
