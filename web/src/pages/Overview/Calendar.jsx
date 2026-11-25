@@ -1,8 +1,20 @@
+import { useState } from "react";
 import "./Calendar.css";
 import { DEFAULT_CATEGORIES } from "../constants/categories";
 import ExpenseEntry from "../components/ExpenseEntry";
 
 function Calendar() {
+  const [expenses, setExpenses] = useState(() =>
+    Array.from({ length: 30 }, () =>
+      Array.from({ length: 6 }, () => ({
+        categoryId: "other",
+        description: "",
+        currency: "EUR",
+        amount: "",
+      }))
+    )
+  );
+
   return (
     <div className="calendar">
       <div className="calendar-header">
@@ -38,13 +50,19 @@ function Calendar() {
               {[0, 1, 2, 3, 4, 5].map((entryIndex) => (
                 <ExpenseEntry
                   key={entryIndex}
-                  expense={{
-                    categoryId: "other",
-                    currency: "EUR",
-                    amount: "",
-                  }}
+                  expense={expenses[i][entryIndex]}
                   onChange={(field, value) => {
-                    console.log(i + 1, entryIndex, field, value);
+                    setExpenses((currentExpenses) =>
+                      currentExpenses.map((dayExpenses, dayIndex) =>
+                        dayIndex === i
+                          ? dayExpenses.map((entry, index) =>
+                              index === entryIndex
+                                ? { ...entry, [field]: value }
+                                : entry
+                            )
+                          : dayExpenses
+                      )
+                    );
                   }}
                 />
               ))}

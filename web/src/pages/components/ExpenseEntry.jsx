@@ -11,7 +11,6 @@ function ExpenseEntry({ expense, onChange }) {
     (category) => category.id === expense.categoryId
   );
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(e) {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
@@ -24,11 +23,15 @@ function ExpenseEntry({ expense, onChange }) {
 
   return (
     <div className="expense-entry">
-      {/* Category – circle is the dropdown */}
-      <div className="category-selector" ref={dropdownRef}>
+      <div
+        className={`category-selector${isOpen ? " is-open" : ""}`}
+        ref={dropdownRef}
+      >
         <button
           type="button"
           className="filter-circle-btn"
+          aria-label={`Choose category color, currently ${selectedCategory?.name ?? "Other"}`}
+          aria-expanded={isOpen}
           style={{
             backgroundColor: selectedCategory?.color ?? "#E5E5E5",
           }}
@@ -42,6 +45,7 @@ function ExpenseEntry({ expense, onChange }) {
                 key={category.id}
                 type="button"
                 className="color-option"
+                aria-label={category.name}
                 title={category.name}
                 style={{ backgroundColor: category.color }}
                 onClick={() => {
@@ -54,7 +58,14 @@ function ExpenseEntry({ expense, onChange }) {
         )}
       </div>
 
-      {/* Currency + Amount (one line, no borders) */}
+      <input
+        className="expense-description"
+        type="text"
+        placeholder="Expense"
+        value={expense.description ?? ""}
+        onChange={(e) => onChange("description", e.target.value)}
+      />
+
       <div className="expense-value">
         <select
           value={expense.currency}
