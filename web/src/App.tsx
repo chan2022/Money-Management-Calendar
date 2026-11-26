@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Dashboard from "./pages/overview/Dashboard"
-import Login from "./pages/Login"
-import Signup from "./pages/Signup"
+import Login from "./pages/authentication/Login"
+import Signup from "./pages/authentication/Signup"
 import "./App.css"
 
 function App() {

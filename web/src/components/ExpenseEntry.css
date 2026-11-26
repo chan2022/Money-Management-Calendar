@@ -58,7 +58,7 @@
 .expense-value {
   display: flex;
   align-items: center;
-  gap: 2px;
+  /* gap: 2px; */
   flex: 0 1 45%;
   max-width: 58px;
   min-width: 28px;

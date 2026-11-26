@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Calendar.css";
-import { DEFAULT_CATEGORIES } from "../constants/categories";
-import ExpenseEntry from "../components/ExpenseEntry";
+import { DEFAULT_CATEGORIES } from "../../constants/categories";
+import ExpenseEntry from "../../components/ExpenseEntry";
 
 function Calendar() {
   const [expenses, setExpenses] = useState(() =>
