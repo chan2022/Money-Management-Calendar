@@ -1,6 +1,6 @@
 import "./Signup.css"
 
-function Signup({ onGoToLogin }) {
+function Signup({ onGoToLogin, onSignUp }) {
   return (
     <div className="profile-container">
       <div className="profile-card">
@@ -16,7 +16,12 @@ function Signup({ onGoToLogin }) {
           </a>
         </p>
 
-        <form>
+        <form
+          onSubmit={(event) => {
+            event.preventDefault()
+            onSignUp()
+          }}
+        >
             <div className="input-group">
                 <input
                     type="text"
@@ -41,16 +46,16 @@ function Signup({ onGoToLogin }) {
                     placeholder="Confirm Password"
                 />
             </div>
+
+            <div className="checkbox-group">
+              <input type="checkbox" id="terms" />
+              <label htmlFor="terms">
+                I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+              </label>
+            </div>
+
+            <button type="submit">Sign Up</button>
         </form>
-
-        <div className="checkbox-group">
-          <input type="checkbox" id="terms" />
-          <label htmlFor="terms">
-            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
-          </label>
-        </div>
-
-        <button type="submit">Sign Up</button>
       </div>
     </div>
   )

@@ -2,10 +2,11 @@ import { useState } from "react"
 import Dashboard from "./pages/overview/Dashboard"
 import Login from "./pages/authentication/Login"
 import Signup from "./pages/authentication/Signup"
+import ProfileSetup from "./pages/profile-setup/ProfileSetup"
 import "./App.css"
 
 function App() {
-  const [page, setPage] = useState<"login" | "signup" | "dashboard">("login")
+  const [page, setPage] = useState<"login" | "signup" | "profile-setup" | "dashboard">("login")
   return (
     <div>
       <h1 className="app-title">MO&A</h1>
@@ -18,7 +19,17 @@ function App() {
       )}
 
       {page === "signup" && (
-        <Signup onGoToLogin={() => setPage("login")} />
+        <Signup
+          onGoToLogin={() => setPage("login")}
+          onSignUp={() => setPage("profile-setup")}
+        />
+      )}
+
+      {page === "profile-setup" && (
+        <ProfileSetup
+          onComplete={() => setPage("dashboard")}
+          onBackToSignup={() => setPage("signup")}
+        />
       )}
 
       {page === "dashboard" && <Dashboard />}

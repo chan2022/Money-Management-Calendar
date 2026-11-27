@@ -1,0 +1,117 @@
+.setup-container {
+  display: flex;
+  justify-content: center;
+  padding: 30px 24px 60px;
+  color: #192853;
+}
+
+.setup-card {
+  box-sizing: border-box;
+  width: min(100%, 680px);
+  padding: 40px;
+  border: 2px solid #0f3b59;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 10px 10px 22px rgba(15, 59, 89, 0.16);
+}
+
+.setup-step {
+  margin: 0 0 10px;
+  color: #587184;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.setup-card h2 {
+  margin: 0 0 28px;
+  color: #0f3b59;
+  font-size: 1.8rem;
+}
+
+.setup-content {
+  min-height: 150px;
+}
+
+.setup-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.setup-button {
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid #0f3b59;
+  border-radius: 10px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.setup-button-secondary {
+  color: #0f3b59;
+  background: #fff;
+}
+
+.setup-button-link {
+  border-color: transparent;
+  color: #587184;
+  background: transparent;
+}
+
+.setup-button-primary {
+  color: #fff;
+  background: #0f3b59;
+}
+
+.setup-button:focus-visible,
+.setup-field:focus-visible {
+  outline: 3px solid #8cc9e8;
+  outline-offset: 2px;
+}
+
+.setup-fields {
+  display: grid;
+  gap: 18px;
+}
+
+.setup-field-group {
+  display: grid;
+  gap: 8px;
+}
+
+.setup-field-group label {
+  font-weight: 600;
+}
+
+.setup-field {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 12px;
+  border: 1px solid #9aabb7;
+  border-radius: 8px;
+  color: #192853;
+  font: inherit;
+}
+
+.setup-placeholder {
+  color: #587184;
+  line-height: 1.6;
+}
+
+@media (max-width: 520px) {
+  .setup-card {
+    padding: 28px 20px;
+  }
+
+  .setup-actions {
+    flex-wrap: wrap;
+  }
+
+  .setup-button-link {
+    order: 1;
+    width: 100%;
+  }
+}
